@@ -15,10 +15,10 @@ read -e results
 touch $results
 for cve in $(cat $location)
 do
-	echo
-	echo
-	echo "$cve"
-	echo
+	echo >> $results
+	echo >> $results
+	echo "$cve" >> $results
+	echo >> $results
 	searchsploit $cve >> $results
 done
 
