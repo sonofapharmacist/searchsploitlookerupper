@@ -2,16 +2,6 @@
 
 #searchsploit cve lookerupper
 
-f_location
-touch $location_sploits.txt
-for cve in $(cat $location)
-do
-	searchsploit $cve >> $location_sploits.txt
-done
-	
-	
-	
-f_location(){
 echo
 echo -n "Enter the location of your cve file: "
 read -e location
@@ -25,4 +15,9 @@ fi
 if [ ! -f $location ]; then
      f_error
 fi
-}
+
+touch $location_sploits.txt
+for cve in $(cat $location)
+do
+	searchsploit $cve >> $location_sploits.txt
+done
