@@ -30,10 +30,10 @@ if [ ! -f $results ]; then
 fi
 
 
-touch $location_sploits.txt
+touch $results
 for cve in $(cat $location)
 do
-	searchsploit $cve >> $results.txt
+	searchsploit $cve >> $results
 done
 
 
