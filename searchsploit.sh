@@ -8,12 +8,11 @@ read -e location
 
 # Check for no answer
 if [[ -z $location ]]; then
-     f_error
-fi
+     echo "you messed up"
 
 # Check for wrong answer
 if [ ! -f $location ]; then
-     f_error
+     echo "you messed up"
 fi
 
 echo
@@ -22,12 +21,12 @@ read -e results
 
 # Check for no answer
 if [[ -z $results ]]; then
-     f_error
+     echo "you messed up"
 fi
 
 # Check for wrong answer
 if [ ! -f $results ]; then
-     f_error
+     echo "you messed up"
 fi
 
 
