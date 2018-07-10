@@ -15,8 +15,12 @@ read -e results
 touch $results
 for cve in $(cat $location)
 do
+	echo
+	echo
+	echo "$cve"
+	echo
 	searchsploit $cve >> $results
 done
 
 
-echo "your results should be here: $results.txt"
+echo "your results should be here: $results"
