@@ -16,8 +16,26 @@ if [ ! -f $location ]; then
      f_error
 fi
 
+echo
+echo -n "Enter the location where you want the results: "
+read -e results
+
+# Check for no answer
+if [[ -z $results ]]; then
+     f_error
+fi
+
+# Check for wrong answer
+if [ ! -f $results ]; then
+     f_error
+fi
+
+
 touch $location_sploits.txt
 for cve in $(cat $location)
 do
-	searchsploit $cve >> $location_sploits.txt
+	searchsploit $cve >> $results.txt
 done
+
+
+echo "your results should be here: $results.txt"
